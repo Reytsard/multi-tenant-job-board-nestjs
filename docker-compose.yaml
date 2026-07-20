@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: job_board
+      MYSQL_USER: test
+      MYSQL_PASSWORD: TEST123
+    volumes:
+      - job_board_data:/var/lib/mysql
+
+volumes:
+  job_board_data:
