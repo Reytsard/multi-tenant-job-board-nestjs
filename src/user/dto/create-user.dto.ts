@@ -1,1 +1,9 @@
-export class CreateUserDto {}
+export class CreateUserDto {
+  username: string;
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  middleName: string;
+  birthdate: Date;
+}
