@@ -5,6 +5,9 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ unique: true })
+  username: string;
+
   @Column()
   firstName: string;
 
@@ -19,4 +22,13 @@ export class User {
 
   @Column()
   currentAddress: string;
+
+  @Column({ unique: true })
+  email: string;
+
+  @Column()
+  password: string;
+
+  @Column()
+  resumeKey: string;
 }

@@ -7,6 +7,7 @@ import { JobModule } from './job/job.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entity/user.entity';
 import { Job } from './entity/job.entity';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { Job } from './entity/job.entity';
       entities: [User, Job],
     }),
     JobModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
