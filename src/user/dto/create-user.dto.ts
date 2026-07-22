@@ -4,6 +4,6 @@ export class CreateUserDto {
   password: string;
   firstName: string;
   lastName: string;
-  middleName: string;
+  middleName?: string;
   birthdate: Date;
 }
