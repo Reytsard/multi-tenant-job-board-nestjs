@@ -17,7 +17,7 @@ export class AuthController {
   }
 
   @HttpCode(HttpStatus.CREATED)
-  @Post()
+  @Post('/signup')
   async signUp(@Body() signUpDto: SignUpDto) {
     return await this.authService.signUp(signUpDto);
   }

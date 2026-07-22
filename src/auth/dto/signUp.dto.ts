@@ -1,4 +1,4 @@
-import { PickType } from '@nestjs/mapped-types';
+import { ApiProperty, PickType } from '@nestjs/swagger';
 import { CreateUserDto } from 'src/user/dto/create-user.dto';
 
 export class SignUpDto extends PickType(CreateUserDto, [
@@ -10,5 +10,6 @@ export class SignUpDto extends PickType(CreateUserDto, [
   'password',
   'username',
 ]) {
+  @ApiProperty()
   validatedPassword: string;
 }

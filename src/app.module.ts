@@ -9,10 +9,20 @@ import { Job } from './entity/job.entity';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { User } from './user/entities/user.entity';
-import { JwtModule } from './jwt/jwt.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env.local',
+      isGlobal: true,
+    }),
+    JwtModule.register({
+      global: true,
+      secret: new ConfigService().get('jwtSecret'),
+      signOptions: { expiresIn: '60m' },
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',

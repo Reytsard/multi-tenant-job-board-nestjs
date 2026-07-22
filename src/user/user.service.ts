@@ -43,5 +43,7 @@ export class UserService {
     return await this.userRepository.existsBy({ email });
   }
 
-  async createUser(signUpDto: SignUpDto) {}
+  async createUser(signUpDto: SignUpDto) {
+    return await this.userRepository.save(signUpDto);
+  }
 }
